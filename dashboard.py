@@ -14,11 +14,10 @@ st.set_page_config(
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-CHARTS_DIR = os.path.join(BASE_DIR, "charts")
-DATASET_DIR = os.path.join(BASE_DIR, "dataset")
-OUTPUT_DIR = os.path.join(BASE_DIR, "output")
+CHARTS_DIR = BASE_DIR
+DATASET_DIR = BASE_DIR
+OUTPUT_DIR = BASE_DIR
 
-# ---------------- HELPERS ----------------
 # ---------------- HELPERS ----------------
 def show_image(filename, title):
     path = os.path.join(CHARTS_DIR, filename)
