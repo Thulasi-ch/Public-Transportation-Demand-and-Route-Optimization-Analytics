@@ -21,19 +21,23 @@ DATASET_DIR = os.path.join(ROOT_DIR, "dataset")
 OUTPUT_DIR = os.path.join(ROOT_DIR, "output")
 
 # ---------------- HELPERS ----------------
-def show_image(filename, caption=""):
-    path = CHARTS / filename
-    if path.exists():
-        st.image(str(path), use_container_width=True, caption=caption)
+# ---------------- HELPERS ----------------
+def show_image(filename, title):
+    path = os.path.join(CHARTS_DIR, filename)
+
+    if os.path.exists(path):
+        st.image(path, use_container_width=True, caption=title)
     else:
         st.warning(f"{filename} not found.")
 
-def load_csv(filename):
-    path = OUTPUT / filename
-    if path.exists():
-        return pd.read_csv(path)
-    return None
 
+def load_csv(filename):
+    path = os.path.join(OUTPUT_DIR, filename)
+
+    if os.path.exists(path):
+        return pd.read_csv(path)
+
+    return None
 # ---------------- TITLE ----------------
 st.title("🚌 Public Transportation Demand and Route Optimization Analytics")
 st.markdown("Interactive Smart Dashboard for Urban Mobility Insights")
