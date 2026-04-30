@@ -11,14 +11,12 @@ st.set_page_config(
 )
 
 # ---------------- PATH SETUP ----------------
-import os
 
-BASE_DIR = os.path.dirname(__file__)
-ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-CHARTS_DIR = os.path.join(ROOT_DIR, "charts")
-DATASET_DIR = os.path.join(ROOT_DIR, "dataset")
-OUTPUT_DIR = os.path.join(ROOT_DIR, "output")
+CHARTS_DIR = os.path.join(BASE_DIR, "charts")
+DATASET_DIR = os.path.join(BASE_DIR, "dataset")
+OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 
 # ---------------- HELPERS ----------------
 # ---------------- HELPERS ----------------
