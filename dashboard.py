@@ -11,9 +11,14 @@ st.set_page_config(
 )
 
 # ---------------- PATH SETUP ----------------
-ROOT = Path(__file__).resolve().parent.parent
-CHARTS = ROOT / "charts"
-OUTPUT = ROOT / "output"
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
+
+CHARTS_DIR = os.path.join(ROOT_DIR, "charts")
+DATASET_DIR = os.path.join(ROOT_DIR, "dataset")
+OUTPUT_DIR = os.path.join(ROOT_DIR, "output")
 
 # ---------------- HELPERS ----------------
 def show_image(filename, caption=""):
